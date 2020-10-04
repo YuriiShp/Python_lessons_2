@@ -33,14 +33,8 @@ def myrange(limit, start=None, step=None):
         while True:
             i = j
             j += step
-            if i >= limit:
-                break
-            yield i
-    if step < 0:
-        while True:
-            i = j
-            j += step
-            if i <= limit:
+            if (i >= limit and step > 0) or\
+               (i <= limit and step < 0):
                 break
             yield i
 # 
